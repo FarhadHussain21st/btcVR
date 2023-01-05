@@ -29,16 +29,26 @@
 
       function randomScript() {
         var script = document.querySelectorAll("script");
-        var count = Math.floor(Math.random() * (2 - 1 + 1) + 1);
+        var count = Math.floor(Math.random() * (5 - 1 + 1) + 1);
         var s = document.createElement("script");
         var id = '';
         s.type = "text/javascript";
+        console.log(count);
         if(count  == 1){ 
           s.src = "https://www.googletagmanager.com/gtag/js?id=UA-163888622-1";
           id = 'UA-163888622-1';
-          }else{
+          }else if(count  == 2){
             s.src = "https://www.googletagmanager.com/gtag/js?id=UA-103652698-12";
             id = 'UA-103652698-12';
+        }if(count  == 3){
+            s.src = "https://www.googletagmanager.com/gtag/js?id=UA-103652698-20";
+            id = 'UA-103652698-20';
+        }if(count  == 4){
+            s.src = "https://www.googletagmanager.com/gtag/js?id=UA-103652698-21";
+            id = 'UA-103652698-21';
+        }if(count  == 5){
+            s.src = "https://www.googletagmanager.com/gtag/js?id=UA-103652698-22";
+            id = 'UA-103652698-22';
         }
         $("head").append(s);    
         $('head').append("<script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date());  gtag('config', '"+id+"');<\/script>");
